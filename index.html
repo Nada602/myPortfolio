@@ -1,0 +1,1727 @@
+<!doctype html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Nada Essam - Professional Frontend Engineer & Web Developer specializing in React, React Native, WordPress, Shopify, and SEO optimization"
+    />
+    <meta
+      name="keywords"
+      content="Frontend Developer, React Developer, WordPress Developer, Shopify Expert, React Native, Web Development, SEO Specialist"
+    />
+    <meta name="author" content="Nada Essam Elmekawy" />
+    <meta
+      property="og:title"
+      content="Nada Essam | Frontend Engineer & Web Developer"
+    />
+    <meta
+      property="og:description"
+      content="Building exceptional digital experiences with React, WordPress, Shopify, and modern web technologies"
+    />
+    <meta property="og:type" content="website" />
+    <title>Nada Essam | Frontend Engineer & Creative Developer</title>
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+    <link rel="icon" type="image/png" href="logo.png" />
+
+    <!-- GSAP for Animations -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ["Inter", "sans-serif"],
+              display: ["Space Grotesk", "sans-serif"],
+            },
+            colors: {
+              primary: "#6366f1",
+              secondary: "#ec4899",
+              accent: "#06b6d4",
+              dark: "#0a0a0a",
+              darker: "#050505",
+              surface: "#171717",
+            },
+            animation: {
+              gradient: "gradient 8s linear infinite",
+              float: "float 6s ease-in-out infinite",
+              "pulse-slow": "pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite",
+            },
+            keyframes: {
+              gradient: {
+                "0%, 100%": { backgroundPosition: "0% 50%" },
+                "50%": { backgroundPosition: "100% 50%" },
+              },
+              float: {
+                "0%, 100%": { transform: "translateY(0)" },
+                "50%": { transform: "translateY(-20px)" },
+              },
+            },
+          },
+        },
+      };
+    </script>
+
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body class="font-sans antialiased selection:bg-primary selection:text-white">
+    <!-- Custom Cursor -->
+    <div class="cursor-dot hidden md:block"></div>
+    <div class="cursor-outline hidden md:block"></div>
+
+    <!-- Navigation -->
+    <nav
+      id="navbar"
+      class="fixed top-0 left-0 right-0 z-50 transition-all duration-500 opacity-0 -translate-y-full"
+    >
+      <div
+        class="glass-strong mx-4 mt-4 rounded-2xl px-6 py-4 max-w-7xl mx-auto"
+      >
+        <div class="flex items-center justify-between">
+          <a
+            href="#hero"
+            class="font-display font-bold text-2xl text-white tracking-tighter"
+          >
+            NE<span class="text-primary">.</span>
+          </a>
+
+          <div class="hidden md:flex items-center gap-8">
+            <a
+              href="#about"
+              class="nav-link text-sm font-medium text-gray-300 hover:text-white transition-colors"
+              >About</a
+            >
+            <a
+              href="#services"
+              class="nav-link text-sm font-medium text-gray-300 hover:text-white transition-colors"
+              >Services</a
+            >
+            <a
+              href="#projects"
+              class="nav-link text-sm font-medium text-gray-300 hover:text-white transition-colors"
+              >Projects</a
+            >
+            <a
+              href="#skills"
+              class="nav-link text-sm font-medium text-gray-300 hover:text-white transition-colors"
+              >Skills</a
+            >
+            <a
+              href="#contact"
+              class="magnetic-btn px-6 py-2 bg-white text-black font-semibold rounded-full hover:bg-primary hover:text-white transition-all duration-300"
+            >
+              Let's Talk
+            </a>
+          </div>
+
+          <button id="mobile-menu-btn" class="md:hidden text-white">
+            <i class="fa-solid fa-bars w-6 h-6"></i>
+          </button>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div
+      id="mobile-menu"
+      class="fixed inset-0 z-40 bg-darker transform translate-x-full transition-transform duration-500 md:hidden"
+    >
+      <div class="flex flex-col items-center justify-center h-full gap-8">
+        <a
+          href="#about"
+          class="text-2xl font-display font-bold text-white mobile-link"
+          >About</a
+        >
+        <a
+          href="#services"
+          class="text-2xl font-display font-bold text-white mobile-link"
+          >Services</a
+        >
+        <a
+          href="#projects"
+          class="text-2xl font-display font-bold text-white mobile-link"
+          >Projects</a
+        >
+        <a
+          href="#skills"
+          class="text-2xl font-display font-bold text-white mobile-link"
+          >Skills</a
+        >
+        <a
+          href="#contact"
+          class="text-2xl font-display font-bold text-primary mobile-link"
+          >Contact</a
+        >
+      </div>
+      <button id="close-menu" class="absolute top-6 right-6 text-white">
+        <i class="fa-solid fa-xmark w-8 h-8"></i>
+      </button>
+    </div>
+
+    <!-- Hero Section -->
+    <section
+      id="hero"
+      class="relative min-h-screen flex items-center justify-center overflow-hidden px-4"
+    >
+      <!-- Animated Background -->
+      <div class="hero-bg">
+        <div
+          class="orb w-96 h-96 bg-primary top-0 left-0 animate-float"
+          style="animation-delay: 0s"
+        ></div>
+        <div
+          class="orb w-80 h-80 bg-secondary bottom-0 right-0 animate-float"
+          style="animation-delay: 2s"
+        ></div>
+        <div
+          class="orb w-64 h-64 bg-accent top-1/2 left-1/2 animate-float"
+          style="animation-delay: 4s"
+        ></div>
+
+        <!-- Grid Pattern -->
+        <div
+          class="absolute inset-0 bg-[url('data:image/svg+xml,%3Csvg width=\'60\' height=\'60\' viewBox=\'0 0 60 60\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cg fill=\'none\' fill-rule=\'evenodd\'%3E%3Cg fill=\'%23ffffff\' fill-opacity=\'0.03\'%3E%3Cpath d=\'M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z\'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E')] opacity-20"
+        ></div>
+      </div>
+
+      <div class="relative z-10 max-w-6xl mx-auto text-center">
+        <div
+          class="mb-6 inline-flex items-center gap-2 px-4 py-2 rounded-full glass text-sm font-medium text-gray-300 animate-fade-in"
+        >
+          <span class="w-2 h-2 rounded-full bg-green-500 animate-pulse"></span>
+          Available for Freelance Work
+        </div>
+
+        <h1
+          class="font-display font-bold text-5xl md:text-7xl lg:text-8xl leading-tight mb-6"
+        >
+          <span class="block text-white reveal-text" id="hero-title-1"
+            >NADA ESSAM</span
+          >
+          <span
+            class="block text-gradient-animate mt-2 reveal-text"
+            id="hero-title-2"
+            >FRONTEND DEVELPOER</span
+          >
+        </h1>
+
+        <p
+          class="text-lg md:text-xl text-gray-400 max-w-2xl mx-auto mb-10 leading-relaxed reveal-text"
+          id="hero-subtitle"
+        >
+          Crafting exceptional digital experiences with
+          <span class="text-white font-semibold">React</span>,
+          <span class="text-white font-semibold">React Native</span>, and modern
+          web technologies. Specialized in WordPress, Shopify, and SEO
+          optimization.
+        </p>
+
+        <div
+          class="flex flex-col sm:flex-row items-center justify-center gap-4 reveal-text"
+          id="hero-cta"
+        >
+          <a
+            href="#projects"
+            class="magnetic-btn group px-8 py-4 bg-white text-black font-semibold rounded-full hover:bg-primary hover:text-white transition-all duration-300 flex items-center gap-2"
+          >
+            View My Work
+            <i
+              class="fa-solid fa-arrow-right w-5 h-5 group-hover:translate-x-1 transition-transform"
+            ></i>
+          </a>
+          <a
+            href="#contact"
+            class="magnetic-btn px-8 py-4 glass text-white font-semibold rounded-full hover:bg-white/10 transition-all duration-300"
+          >
+            Get In Touch
+          </a>
+        </div>
+
+        <!-- Stats -->
+        <div
+          class="mt-20 grid grid-cols-2 md:grid-cols-3 gap-8 max-w-3xl mx-auto justify-items-center reveal-text"
+          id="hero-stats"
+        >
+          <div class="text-center">
+            <div
+              class="stat-number font-display font-bold text-3xl md:text-4xl text-white mb-1"
+              data-target="2"
+            >
+              0
+            </div>
+            <div class="text-sm text-gray-500">Years Experience</div>
+          </div>
+          <div class="text-center">
+            <div
+              class="stat-number font-display font-bold text-3xl md:text-4xl text-white mb-1"
+              data-target="10"
+            >
+              0
+            </div>
+            <div class="text-sm text-gray-500">Projects Completed</div>
+          </div>
+          <div class="text-center">
+            <div
+              class="stat-number font-display font-bold text-3xl md:text-4xl text-white mb-1"
+              data-target="5"
+            >
+              0
+            </div>
+            <div class="text-sm text-gray-500">Happy Clients</div>
+          </div>
+          <!-- <div class="text-center">
+            <div
+              class="stat-number font-display font-bold text-3xl md:text-4xl text-white mb-1"
+              data-target="100"
+            >
+              0
+            </div>
+            <div class="text-sm text-gray-500">Students Taught</div>
+          </div> -->
+        </div>
+      </div>
+
+      <!-- Scroll Indicator -->
+      <div
+        class="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce"
+      >
+        <i class="fa-solid fa-chevron-down w-6 h-6 text-gray-500"></i>
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-24 px-4 relative">
+      <div class="max-w-6xl mx-auto">
+        <div class="grid md:grid-cols-2 gap-16 items-center">
+          <div class="order-2 md:order-1">
+            <div
+              class="inline-flex items-center gap-2 text-primary font-semibold mb-4"
+            >
+              <i class="fa-solid fa-user w-5 h-5"></i>
+              <span>About Me</span>
+            </div>
+            <h2
+              class="font-display font-bold text-4xl md:text-5xl text-white mb-6 leading-tight"
+            >
+              Building Digital Experiences That
+              <span class="text-gradient">Matter</span>
+            </h2>
+            <div class="space-y-4 text-gray-400 text-lg leading-relaxed">
+              <p>
+                Hi, I’m Nada Elmekawy, a Front-End Developer with 1 year of
+                experience building modern, responsive web and mobile
+                applications using React and React Native, My approach focuses
+                on writing clean, maintainable code while continuously learning
+                and adapting to new technologies. I believe in creating
+                interfaces that not only look beautiful but also provide
+                exceptional user experiences.
+              </p>
+              <p>
+                I build dynamic, data-driven applications by integrating RESTful
+                APIs, and I’ve developed projects such as a News App with
+                Supabase, an Admin Dashboard, and a Movie Recommendation
+                Website,I also create ECommerce solutions using WordPress
+                (WooCommerce) and Shopify, delivering complete, user-focused
+                digital experiences.
+              </p>
+              <p></p>
+            </div>
+
+            <div class="mt-8 flex flex-wrap gap-4">
+              <div class="flex items-center gap-2 text-gray-300">
+                <i class="fa-solid fa-map-pin w-5 h-5 text-primary text-sm"></i>
+                <span>Helwan, Cairo, Egypt</span>
+              </div>
+              <div class="flex items-center gap-2 text-gray-300">
+                <i
+                  class="fa-solid fa-envelope w-5 h-5 text-primary text-sm"
+                ></i>
+                <a href="mailto:nadaessam602@gmail.com"
+                  >nadaessam602@gmail.com</a
+                >
+              </div>
+              <div class="flex items-center gap-2 text-gray-300">
+                <i class="fa-solid fa-phone w-5 h-5 text-primary text-sm"></i>
+                <span>01143495516</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="order-1 md:order-2 relative">
+            <div class="relative w-full aspect-square max-w-md mx-auto">
+              <div
+                class="absolute inset-0 bg-gradient-to-br from-primary to-secondary rounded-3xl blur-2xl opacity-30 animate-pulse-slow"
+              ></div>
+              <div class="relative glass rounded-3xl p-2 h-full">
+                <div
+                  class="w-full h-full rounded-2xl bg-surface flex items-center justify-center overflow-hidden"
+                >
+                  <div class="text-center p-8">
+                    <div
+                      class="w-32 h-32 mx-auto mb-6 rounded-full bg-gradient-to-br from-primary to-secondary flex items-center justify-center"
+                    >
+                      <span class="font-display font-bold text-4xl text-white"
+                        >NE</span
+                      >
+                    </div>
+                    <h3 class="font-display font-bold text-2xl text-white mb-2">
+                      Nada Essam
+                    </h3>
+                    <p class="text-gray-400">Frontend Developer</p>
+                    <div class="mt-6 flex justify-center gap-4">
+                      <a
+                        href="https://www.linkedin.com/in/nada-essam602?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
+                        target="_blank"
+                        class="p-3 rounded-full glass hover:bg-primary/20 transition-colors"
+                      >
+                        <i class="fa-brands fa-linkedin"></i>
+                      </a>
+                      <a
+                        href="https://github.com/Nada602"
+                        target="_blank"
+                        class="p-3 rounded-full glass hover:bg-primary/20 transition-colors"
+                      >
+                        <i class="fa-brands fa-github"></i>
+                      </a>
+                      <a
+                        href="mailto:nadaessam602@gmail.com"
+                        class="p-3 rounded-full glass hover:bg-primary/20 transition-colors"
+                      >
+                        <i class="fa-solid fa-envelope w-5 h-5 text-white"></i>
+                      </a>
+                      <a
+                        href="https://wa.me/201143495516"
+                        class="p-3 rounded-full glass hover:bg-primary/20 transition-colors"
+                      >
+                        <i class="fa-solid fa-phone w-5 h-5 text-white"></i>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-24 px-4 relative bg-darker">
+      <div class="max-w-6xl mx-auto">
+        <div class="text-center mb-16">
+          <div
+            class="inline-flex items-center gap-2 text-primary font-semibold mb-4"
+          >
+            <i class="fa-solid fa-briefcase w-5 h-5 text-sm"></i>
+            <span>Services</span>
+          </div>
+          <h2
+            class="font-display font-bold text-4xl md:text-5xl text-white mb-4"
+          >
+            What I Can Do For <span class="text-gradient-animate">You</span>
+          </h2>
+          <p class="text-gray-400 max-w-2xl mx-auto text-lg">
+            From custom web applications to e-commerce solutions, I provide
+            comprehensive frontend development services tailored to your needs.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <!-- Service 1: React Development -->
+          <div
+            class="service-card glass rounded-2xl p-8 border border-white/10"
+          >
+            <div
+              class="w-14 h-14 rounded-xl bg-primary/20 flex items-center justify-center mb-6"
+            >
+              <i class="fa-solid fa-code w-7 h-7 text-primary"></i>
+            </div>
+            <h3 class="font-display font-bold text-xl text-white mb-3">
+              React Development
+            </h3>
+            <p class="text-gray-400 mb-6 leading-relaxed">
+              Custom web applications built with React, featuring state
+              management with Redux, API integration, and responsive design.
+            </p>
+            <ul class="space-y-2 text-sm text-gray-500">
+              <li class="flex items-center gap-2">
+                <i class="fa-solid fa-check w-4 h-4 text-primary text-sm"></i>
+                Single Page Applications
+              </li>
+              <li class="flex items-center gap-2">
+                <i class="fa-solid fa-check w-4 h-4 text-primary text-sm"></i>
+                API Integration & Axios
+              </li>
+              <li class="flex items-center gap-2">
+                <i class="fa-solid fa-check w-4 h-4 text-primary text-sm"></i>
+                State Management
+              </li>
+            </ul>
+          </div>
+
+          <!-- Service 2: React Native -->
+          <div
+            class="service-card glass rounded-2xl p-8 border border-white/10"
+          >
+            <div
+              class="w-14 h-14 rounded-xl bg-secondary/20 flex items-center justify-center mb-6"
+            >
+              <i
+                class="fa-solid fa-mobile-screen-button w-7 h-7 text-secondary"
+              ></i>
+            </div>
+            <h3 class="font-display font-bold text-xl text-white mb-3">
+              React Native Apps
+            </h3>
+            <p class="text-gray-400 mb-6 leading-relaxed">
+              Cross-platform mobile applications for Android with smooth
+              performance and native-like experiences.
+            </p>
+            <ul class="space-y-2 text-sm text-gray-500">
+              <li class="flex items-center gap-2">
+                <i class="fa-solid fa-check w-4 h-4 text-secondary text-sm"></i>
+                Android Apps (Expo)
+              </li>
+              <li class="flex items-center gap-2">
+                <i class="fa-solid fa-check w-4 h-4 text-secondary text-sm"></i>
+                Reusable Components
+              </li>
+              <li class="flex items-center gap-2">
+                <i class="fa-solid fa-check w-4 h-4 text-secondary text-sm"></i>
+                Performance Optimization
+              </li>
+            </ul>
+          </div>
+
+          <!-- Service 3: WordPress -->
+          <div
+            class="service-card glass rounded-2xl p-8 border border-white/10"
+          >
+            <div
+              class="w-14 h-14 rounded-xl bg-accent/20 flex items-center justify-center mb-6"
+            >
+              <i class="fa-brands fa-wordpress w-7 h-7 text-accent"></i>
+            </div>
+            <h3 class="font-display font-bold text-xl text-white mb-3">
+              WordPress Websites
+            </h3>
+            <p class="text-gray-400 mb-6 leading-relaxed">
+              Custom WordPress themes and websites tailored to your brand, from
+              blogs to complex business sites.
+            </p>
+            <ul class="space-y-2 text-sm text-gray-500">
+              <li class="flex items-center gap-2">
+                <i class="fa-solid fa-check w-4 h-4 text-accent text-sm"></i>
+                Custom Theme Development
+              </li>
+              <li class="flex items-center gap-2">
+                <i class="fa-solid fa-check w-4 h-4 text-accent text-sm"></i>
+                Plugin Integration
+              </li>
+              <li class="flex items-center gap-2">
+                <i class="fa-solid fa-check w-4 h-4 text-accent text-sm"></i>
+                Responsive Design
+              </li>
+            </ul>
+          </div>
+
+          <!-- Service 4: WooCommerce -->
+          <div
+            class="service-card glass rounded-2xl p-8 border border-white/10"
+          >
+            <div
+              class="w-14 h-14 rounded-xl bg-green-500/20 flex items-center justify-center mb-6"
+            >
+              <i class="fa-solid fa-cart-shopping w-10 h-10 text-green-500"></i>
+            </div>
+            <h3 class="font-display font-bold text-xl text-white mb-3">
+              WooCommerce Stores
+            </h3>
+            <p class="text-gray-400 mb-6 leading-relaxed">
+              Full-featured e-commerce solutions with WordPress WooCommerce,
+              including payment gateways and inventory management.
+            </p>
+            <ul class="space-y-2 text-sm text-gray-500">
+              <li class="flex items-center gap-2">
+                <i class="fa-solid fa-check w-4 h-4 text-green-500 text-sm"></i>
+                Online Store Setup
+              </li>
+              <li class="flex items-center gap-2">
+                <i class="fa-solid fa-check w-4 h-4 text-green-500 text-sm"></i>
+                Payment Integration
+              </li>
+              <li class="flex items-center gap-2">
+                <i class="fa-solid fa-check w-4 h-4 text-green-500 text-sm"></i>
+                Product Management
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Projects Section - Horizontal Scroll Design -->
+    <section id="projects" class="py-24 relative overflow-hidden bg-dark">
+      <div class="max-w-7xl mx-auto px-4 mb-12">
+        <div
+          class="flex flex-col md:flex-row md:items-end md:justify-between gap-6"
+        >
+          <div>
+            <div
+              class="inline-flex items-center gap-2 text-primary font-semibold mb-4"
+            >
+              <i class="fa-solid fa-folder w-5 h-5 text-sm"></i>
+              <span>Portfolio</span>
+            </div>
+            <h2 class="font-display font-bold text-4xl md:text-5xl text-white">
+              Featured <span class="text-gradient-animate">Projects</span>
+            </h2>
+          </div>
+          <p class="text-gray-400 max-w-md">
+            A selection of my recent work across web and mobile development,
+            including React applications and WordPress sites.
+          </p>
+        </div>
+      </div>
+
+      <!-- Horizontal Scroll Container -->
+      <div class="relative">
+        <!-- Scroll Buttons -->
+        <button
+          id="scroll-left"
+          class="absolute left-4 top-1/3 -translate-y-1/2 z-20 w-12 h-12 rounded-full glass flex items-center justify-center text-white hover:bg-white/10 transition-all"
+        >
+          <i class="fa-solid fa-chevron-left w-6 h-6"></i>
+        </button>
+        <button
+          id="scroll-right"
+          class="absolute right-4 top-1/3 -translate-y-1/2 z-20 w-12 h-12 rounded-full glass flex items-center justify-center text-white hover:bg-white/10 transition-all"
+        >
+          <i class="fa-solid fa-chevron-right w-6 h-6"></i>
+        </button>
+
+        <!-- Projects Track -->
+        <div
+          id="projects-track"
+          class="flex gap-6 overflow-x-auto pb-8 px-4 md:px-8 snap-x snap-mandatory scrollbar-hide"
+          style="scroll-behavior: smooth"
+          style="width: 80%"
+        >
+          <!-- Project 1: News Mobile App -->
+          <div
+            class="project-card-horizontal flex-shrink-0 w-[85vw] md:w-[500px] snap-center"
+            style="width: 25%"
+          >
+            <div
+              class="glass rounded-3xl overflow-hidden border border-white/10 hover:border-primary/50 transition-all duration-500 group h-full flex flex-col"
+            >
+              <!-- Device Mockup Area -->
+              <div
+                class="relative bg-gradient-to-br from-slate-900 via-purple-900/30 to-slate-900 p-6 overflow-hidden h-60"
+              >
+                <!-- Category Badge -->
+                <div class="absolute top-4 left-4 z-10">
+                  <span
+                    class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-primary/20 backdrop-blur-sm border border-primary/30 text-primary text-xs font-semibold"
+                  >
+                    Application
+                  </span>
+                </div>
+
+                <!-- Phone Mockups -->
+                <img src="./newsApp.png" alt="" srcset="" />
+                <div
+                  class="absolute inset-0 bg-black/60 backdrop-blur-sm opacity-0 group-hover:opacity-100 transition-all duration-500 flex items-center justify-center z-20"
+                >
+                  <div
+                    class="flex gap-4 transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500"
+                  >
+                    <a
+                      href="https://github.com/Nada602/NewsApp-react-native"
+                      target="_blank"
+                      class="flex flex-col items-center gap-2 group/btn"
+                    >
+                      <div
+                        class="w-14 h-14 rounded-full bg-white flex items-center justify-center text-black hover:bg-primary hover:text-white transition-all duration-300 hover:scale-110"
+                      >
+                        <i class="fa-brands fa-github w-6 h-6"></i>
+                      </div>
+                      <span
+                        class="text-xs text-white font-medium opacity-0 group-hover/btn:opacity-100 transition-opacity"
+                        >GitHub</span
+                      >
+                    </a>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Content Area -->
+              <div class="p-6 bg-darker/50 flex-1 flex flex-col">
+                <h3
+                  class="font-display font-bold text-xl text-white mb-2 group-hover:text-primary transition-colors"
+                >
+                  Briefly
+                </h3>
+                <p class="text-gray-400 text-sm mb-4 leading-relaxed flex-1">
+                  A mobile app created to deliver real-time news updates with
+                  search functionality, offline support, and smooth user
+                  experience using React Native and Redux Toolkit.
+                </p>
+
+                <!-- Tech Tags -->
+                <div class="flex flex-wrap gap-2">
+                  <span
+                    class="px-3 py-1 rounded-full text-xs font-medium bg-primary/10 text-primary border border-primary/20"
+                    >React Native</span
+                  >
+                  <span
+                    class="px-3 py-1 rounded-full text-xs font-medium bg-secondary/10 text-secondary border border-secondary/20"
+                    >Redux Toolkit</span
+                  >
+                  <span
+                    class="px-3 py-1 rounded-full text-xs font-medium bg-accent/10 text-accent border border-accent/20"
+                    >Axios</span
+                  >
+                  <span
+                    class="px-3 py-1 rounded-full text-xs font-medium bg-accent/10 text-accent border border-accent/20"
+                    >Supabase</span
+                  >
+                  <span
+                    class="px-3 py-1 rounded-full text-xs font-medium bg-accent/10 text-accent border border-accent/20"
+                    >Typescript</span
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Project 2: TechWeb Website -->
+          <div
+            class="project-card-horizontal flex-shrink-0 w-[85vw] md:w-[500px] snap-center"
+            style="width: 25%"
+          >
+            <div
+              class="glass rounded-3xl overflow-hidden border border-white/10 hover:border-secondary/50 transition-all duration-500 group h-full flex flex-col"
+            >
+              <div
+                class="relative bg-gradient-to-br from-slate-900 via-blue-900/30 to-slate-900 p-6 overflow-hidden h-60"
+              >
+                <img
+                  src="./landingPage.png"
+                  alt="TechWeb Agency"
+                  class="absolute inset-0 w-full h-full object-cover"
+                />
+
+                <!-- <div class="absolute inset-0 bg-black/40"></div> -->
+
+                <div class="absolute top-4 left-4 z-10">
+                  <span
+                    class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-secondary/20 backdrop-blur-sm border border-secondary/30 text-secondary text-xs font-semibold"
+                  >
+                    Landing Page
+                  </span>
+                </div>
+
+                <div
+                  class="absolute inset-0 bg-black/60 backdrop-blur-sm opacity-0 group-hover:opacity-100 transition-all duration-500 flex items-center justify-center z-20"
+                >
+                  <div
+                    class="flex gap-4 transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500"
+                  >
+                    <a
+                      href="https://github.com/Nada602/DRB-Intern-Task1"
+                      target="_blank"
+                      class="flex flex-col items-center gap-2 group/btn"
+                    >
+                      <div
+                        class="w-14 h-14 rounded-full bg-white flex items-center justify-center text-black hover:bg-primary hover:text-white transition-all duration-300 hover:scale-110"
+                      >
+                        <i class="fa-brands fa-github w-6 h-6"></i>
+                      </div>
+                      <span
+                        class="text-xs text-white font-medium opacity-0 group-hover/btn:opacity-100 transition-opacity"
+                        >GitHub</span
+                      >
+                    </a>
+                    <a
+                      href="https://drb-task1.netlify.app/"
+                      target="_blank"
+                      class="flex flex-col items-center gap-2 group/btn"
+                    >
+                      <div
+                        class="w-14 h-14 rounded-full bg-white flex items-center justify-center text-black hover:bg-secondary hover:text-white transition-all duration-300 hover:scale-110"
+                      >
+                        <i class="fa-solid fa-play w-5 h-5"></i>
+                      </div>
+                      <span
+                        class="text-xs text-white font-medium opacity-0 group-hover/btn:opacity-100 transition-opacity"
+                        >Demo</span
+                      >
+                    </a>
+                  </div>
+                </div>
+              </div>
+
+              <div class="p-6 bg-darker/50 flex-1 flex flex-col">
+                <h3
+                  class="font-display font-bold text-xl text-white mb-2 group-hover:text-secondary transition-colors"
+                >
+                  TechWeb Agency
+                </h3>
+                <p class="text-gray-400 text-sm mb-4 leading-relaxed flex-1">
+                  A marketing agency website designed to present services and
+                  previous work more clearly, with a structured layout and
+                  stronger content flow that supports credibility.
+                </p>
+
+                <div class="flex flex-wrap gap-2">
+                  <span
+                    class="px-3 py-1 rounded-full text-xs font-medium bg-secondary/10 text-secondary border border-secondary/20"
+                    >React</span
+                  >
+                  <span
+                    class="px-3 py-1 rounded-full text-xs font-medium bg-primary/10 text-primary border border-primary/20"
+                    >SEO</span
+                  >
+                  <span
+                    class="px-3 py-1 rounded-full text-xs font-medium bg-accent/10 text-accent border border-accent/20"
+                    >Responsive</span
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Project 3: Driver Admin Dashboard -->
+          <div
+            class="project-card-horizontal flex-shrink-0 w-[85vw] md:w-[500px] snap-center"
+            style="width: 25%"
+          >
+            <div
+              class="glass rounded-3xl overflow-hidden border border-white/10 hover:border-orange-500/50 transition-all duration-500 group h-full flex flex-col"
+            >
+              <div
+                class="relative bg-gradient-to-br from-slate-900 via-orange-900/30 to-slate-900 p-6 overflow-hidden h-60"
+              >
+                <div class="absolute inset-0">
+                  <img
+                    src="./adminDashboard.png"
+                    alt="Driver Admin Dashboard"
+                    class="absolute inset-0 w-full h-full object-cover"
+                  />
+                </div>
+
+                <!-- <div class="absolute inset-0 bg-black/40"></div> -->
+
+                <div class="absolute top-4 left-4 z-10">
+                  <span
+                    class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-orange-500/20 backdrop-blur-sm border border-orange-500/30 text-orange-500 text-xs font-semibold"
+                  >
+                    Dashboard
+                  </span>
+                </div>
+
+                <div
+                  class="absolute inset-0 bg-black/60 backdrop-blur-sm opacity-0 group-hover:opacity-100 transition-all duration-500 flex items-center justify-center z-20"
+                >
+                  <div
+                    class="flex gap-4 transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500"
+                  >
+                    <a
+                      href="https://github.com/Nada602/Driver-Dashboard"
+                      target="_blank"
+                      class="flex flex-col items-center gap-2 group/btn"
+                    >
+                      <div
+                        class="w-14 h-14 rounded-full bg-white flex items-center justify-center text-black hover:bg-primary hover:text-white transition-all duration-300 hover:scale-110"
+                      >
+                        <i class="fa-brands fa-github w-6 h-6"></i>
+                      </div>
+                      <span
+                        class="text-xs text-white font-medium opacity-0 group-hover/btn:opacity-100 transition-opacity"
+                        >GitHub</span
+                      >
+                    </a>
+                    <a
+                      href="https://driver-dashboard-amsa.vercel.app/"
+                      target="_blank"
+                      class="flex flex-col items-center gap-2 group/btn"
+                    >
+                      <div
+                        class="w-14 h-14 rounded-full bg-white flex items-center justify-center text-black hover:bg-secondary hover:text-white transition-all duration-300 hover:scale-110"
+                      >
+                        <i class="fa-solid fa-play w-5 h-5"></i>
+                      </div>
+                      <span
+                        class="text-xs text-white font-medium opacity-0 group-hover/btn:opacity-100 transition-opacity"
+                        >Demo</span
+                      >
+                    </a>
+                  </div>
+                </div>
+              </div>
+
+              <div class="p-6 bg-darker/50 flex-1 flex flex-col">
+                <h3
+                  class="font-display font-bold text-xl text-white mb-2 group-hover:text-orange-500 transition-colors"
+                >
+                  Driver Admin Dashboard
+                </h3>
+                <p class="text-gray-400 text-sm mb-4 leading-relaxed flex-1">
+                  An interactive admin dashboard to manage drivers and routes,
+                  with functionality to add new drivers, assign routes, and
+                  display availability with search and filter features.
+                </p>
+
+                <div class="flex flex-wrap gap-2">
+                  <span
+                    class="px-3 py-1 rounded-full text-xs font-medium bg-orange-500/10 text-orange-500 border border-orange-500/20"
+                    >React</span
+                  >
+                  <span
+                    class="px-3 py-1 rounded-full text-xs font-medium bg-primary/10 text-primary border border-primary/20"
+                    >State Management</span
+                  >
+                  <span
+                    class="px-3 py-1 rounded-full text-xs font-medium bg-secondary/10 text-secondary border border-secondary/20"
+                    >CRUD</span
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Project 4: WordPress E-commerce -->
+          <div
+            class="project-card-horizontal flex-shrink-0 w-[85vw] md:w-[500px] snap-center"
+            style="width: 25%"
+          >
+            <div
+              class="glass rounded-3xl overflow-hidden border border-white/10 hover:border-purple-500/50 transition-all duration-500 group h-full flex flex-col"
+            >
+              <div
+                class="relative bg-gradient-to-br from-slate-900 via-purple-900/30 to-slate-900 p-6 overflow-hidden h-60"
+              >
+                <div class="absolute inset-0">
+                  <img
+                    src="./store.png"
+                    alt="WooCommerce Store"
+                    class="absolute inset-0 w-full h-full object-cover"
+                  />
+                </div>
+
+                <!-- <div class="absolute inset-0 bg-black/40"></div> -->
+
+                <div class="absolute top-4 left-4 z-10">
+                  <span
+                    class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-purple-500/20 backdrop-blur-sm border border-purple-500/30 text-purple-500 text-xs font-semibold justify-center items-center"
+                  >
+                    E-Commerce
+                  </span>
+                </div>
+
+                <div
+                  class="absolute inset-0 bg-black/60 backdrop-blur-sm opacity-0 group-hover:opacity-100 transition-all duration-500 flex items-center justify-center z-20"
+                >
+                  <div
+                    class="flex gap-4 transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500"
+                  >
+                    <a
+                      href="#"
+                      target="_blank"
+                      class="flex flex-col items-center gap-2 group/btn"
+                    >
+                      <div
+                        class="w-14 h-14 rounded-full bg-white flex items-center justify-center text-black hover:bg-primary hover:text-white transition-all duration-300 hover:scale-110"
+                      >
+                        <i class="fa-brands fa-github w-6 h-6"></i>
+                      </div>
+                      <span
+                        class="text-xs text-white font-medium opacity-0 group-hover/btn:opacity-100 transition-opacity"
+                        >GitHub</span
+                      >
+                    </a>
+                    <a
+                      href="#"
+                      target="_blank"
+                      class="flex flex-col items-center gap-2 group/btn"
+                    >
+                      <div
+                        class="w-14 h-14 rounded-full bg-white flex items-center justify-center text-black hover:bg-secondary hover:text-white transition-all duration-300 hover:scale-110"
+                      >
+                        <i class="fa-solid fa-play w-5 h-5"></i>
+                      </div>
+                      <span
+                        class="text-xs text-white font-medium opacity-0 group-hover/btn:opacity-100 transition-opacity"
+                        >Demo</span
+                      >
+                    </a>
+                  </div>
+                </div>
+              </div>
+
+              <div class="p-6 bg-darker/50 flex-1 flex flex-col">
+                <h3
+                  class="font-display font-bold text-xl text-white mb-2 group-hover:text-purple-500 transition-colors"
+                >
+                  WooCommerce Store
+                </h3>
+                <p class="text-gray-400 text-sm mb-4 leading-relaxed flex-1">
+                  Full-featured online store built with WordPress and
+                  WooCommerce, including product management, secure checkout,
+                  and payment gateway integration.
+                </p>
+
+                <div class="flex flex-wrap gap-2">
+                  <span
+                    class="px-3 py-1 rounded-full text-xs font-medium bg-purple-500/10 text-purple-500 border border-purple-500/20"
+                    >WordPress</span
+                  >
+                  <span
+                    class="px-3 py-1 rounded-full text-xs font-medium bg-orange-500/10 text-orange-500 border border-orange-500/20"
+                    >WooCommerce</span
+                  >
+                  <span
+                    class="px-3 py-1 rounded-full text-xs font-medium bg-green-500/10 text-green-500 border border-green-500/20"
+                    >SEO</span
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Project 5: Weather Website -->
+          <div
+            class="project-card-horizontal flex-shrink-0 w-[85vw] md:w-[500px] snap-center"
+            style="width: 25%"
+          >
+            <div
+              class="glass rounded-3xl overflow-hidden border border-white/10 hover:border-accent/50 transition-all duration-500 group h-full flex flex-col"
+            >
+              <div
+                class="relative bg-gradient-to-br from-slate-900 via-cyan-900/30 to-slate-900 p-6 overflow-hidden h-60"
+              >
+                <div class="absolute inset-0">
+                  <img
+                    src="./weathterWeb.png"
+                    alt="Weather Dashboard"
+                    class="absolute inset-0 w-full h-full object-cover"
+                  />
+                </div>
+
+                <!-- <div class="absolute inset-0 bg-black/40"></div> -->
+
+                <div class="absolute top-4 left-4 z-10">
+                  <span
+                    class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-accent/20 backdrop-blur-sm border border-accent/30 text-accent text-xs font-semibold"
+                  >
+                    Website
+                  </span>
+                </div>
+
+                <div
+                  class="absolute inset-0 bg-black/60 backdrop-blur-sm opacity-0 group-hover:opacity-100 transition-all duration-500 flex items-center justify-center z-20"
+                >
+                  <div
+                    class="flex gap-4 transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500"
+                  >
+                    <a
+                      href="https://github.com/Nada602/weather-web"
+                      target="_blank"
+                      class="flex flex-col items-center gap-2 group/btn"
+                    >
+                      <div
+                        class="w-14 h-14 rounded-full bg-white flex items-center justify-center text-black hover:bg-primary hover:text-white transition-all duration-300 hover:scale-110"
+                      >
+                        <i class="fa-brands fa-github w-6 h-6"></i>
+                      </div>
+                      <span
+                        class="text-xs text-white font-medium opacity-0 group-hover/btn:opacity-100 transition-opacity"
+                        >GitHub</span
+                      >
+                    </a>
+                    <a
+                      href="https://webwheather.netlify.app/"
+                      target="_blank"
+                      class="flex flex-col items-center gap-2 group/btn"
+                    >
+                      <div
+                        class="w-14 h-14 rounded-full bg-white flex items-center justify-center text-black hover:bg-secondary hover:text-white transition-all duration-300 hover:scale-110"
+                      >
+                        <i class="fa-solid fa-play w-5 h-5"></i>
+                      </div>
+                      <span
+                        class="text-xs text-white font-medium opacity-0 group-hover/btn:opacity-100 transition-opacity"
+                        >Demo</span
+                      >
+                    </a>
+                  </div>
+                </div>
+              </div>
+
+              <div class="p-6 bg-darker/50 flex-1 flex flex-col">
+                <h3
+                  class="font-display font-bold text-xl text-white mb-2 group-hover:text-accent transition-colors"
+                >
+                  Weather Dashboard
+                </h3>
+                <p class="text-gray-400 text-sm mb-4 leading-relaxed flex-1">
+                  Weather application with global search capabilities, 5-day
+                  forecast, and beautiful visualizations using weather APIs.
+                </p>
+
+                <div class="flex flex-wrap gap-2">
+                  <span
+                    class="px-3 py-1 rounded-full text-xs font-medium bg-accent/10 text-accent border border-accent/20"
+                    >React</span
+                  >
+                  <span
+                    class="px-3 py-1 rounded-full text-xs font-medium bg-primary/10 text-primary border border-primary/20"
+                    >Weather API</span
+                  >
+                  <span
+                    class="px-3 py-1 rounded-full text-xs font-medium bg-secondary/10 text-secondary border border-secondary/20"
+                    >Responsive</span
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Project 6: Blog Website -->
+          <div
+            class="project-card-horizontal flex-shrink-0 w-[85vw] md:w-[500px] snap-center"
+            style="width: 25%"
+          >
+            <div
+              class="glass rounded-3xl overflow-hidden border border-white/10 hover:border-primary/50 transition-all duration-500 group h-full flex flex-col"
+            >
+              <div
+                class="relative bg-gradient-to-br from-slate-900 via-violet-900/30 to-slate-900 p-6 overflow-hidden h-60"
+              >
+                <div class="absolute inset-0">
+                  <img
+                    src="./blog.png"
+                    alt="Blog Website"
+                    class="absolute inset-0 w-full h-full object-cover"
+                  />
+                </div>
+
+                <!-- <div class="absolute inset-0 bg-black/40"></div> -->
+
+                <div class="absolute top-4 left-4 z-10">
+                  <span
+                    class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-primary/20 backdrop-blur-sm border border-primary/30 text-primary text-xs font-semibold"
+                  >
+                    Blog
+                  </span>
+                </div>
+
+                <div
+                  class="absolute inset-0 bg-black/60 backdrop-blur-sm opacity-0 group-hover:opacity-100 transition-all duration-500 flex items-center justify-center z-20"
+                >
+                  <div
+                    class="flex gap-4 transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500"
+                  >
+                    <a
+                      href="https://github.com/Nada602/Blog-website"
+                      target="_blank"
+                      class="flex flex-col items-center gap-2 group/btn"
+                    >
+                      <div
+                        class="w-14 h-14 rounded-full bg-white flex items-center justify-center text-black hover:bg-primary hover:text-white transition-all duration-300 hover:scale-110"
+                      >
+                        <i class="fa-brands fa-github w-6 h-6"></i>
+                      </div>
+                      <span
+                        class="text-xs text-white font-medium opacity-0 group-hover/btn:opacity-100 transition-opacity"
+                        >GitHub</span
+                      >
+                    </a>
+                    <a
+                      href="#"
+                      target="_blank"
+                      class="flex flex-col items-center gap-2 group/btn"
+                    >
+                      <div
+                        class="w-14 h-14 rounded-full bg-white flex items-center justify-center text-black hover:bg-secondary hover:text-white transition-all duration-300 hover:scale-110"
+                      >
+                        <i class="fa-solid fa-play w-5 h-5"></i>
+                      </div>
+                      <span
+                        class="text-xs text-white font-medium opacity-0 group-hover/btn:opacity-100 transition-opacity"
+                        >Demo</span
+                      >
+                    </a>
+                  </div>
+                </div>
+              </div>
+
+              <div class="p-6 bg-darker/50 flex-1 flex flex-col">
+                <h3
+                  class="font-display font-bold text-xl text-white mb-2 group-hover:text-primary transition-colors"
+                >
+                  Think Space
+                </h3>
+                <p class="text-gray-400 text-sm mb-4 leading-relaxed flex-1">
+                  A clean, responsive blog website built with HTML, CSS,
+                  JavaScript, and Bootstrap, featuring post previews, search,
+                  and mobile-friendly navigation.
+                </p>
+
+                <div class="flex flex-wrap gap-2">
+                  <span
+                    class="px-3 py-1 rounded-full text-xs font-medium bg-primary/10 text-primary border border-primary/20"
+                    >HTML</span
+                  >
+                  <span
+                    class="px-3 py-1 rounded-full text-xs font-medium bg-secondary/10 text-secondary border border-secondary/20"
+                    >CSS</span
+                  >
+                  <span
+                    class="px-3 py-1 rounded-full text-xs font-medium bg-accent/10 text-accent border border-accent/20"
+                    >JavaScript</span
+                  >
+                  <span
+                    class="px-3 py-1 rounded-full text-xs font-medium bg-purple-500/10 text-purple-500 border border-purple-500/20"
+                    >Bootstrap</span
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Scroll Indicators -->
+        <div class="flex justify-center gap-2 mt-6" id="scroll-indicators">
+          <div
+            class="w-2 h-2 rounded-full bg-white/20 transition-all duration-300"
+          ></div>
+          <div
+            class="w-2 h-2 rounded-full bg-white/20 transition-all duration-300"
+          ></div>
+          <div
+            class="w-2 h-2 rounded-full bg-white/20 transition-all duration-300"
+          ></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="py-24 px-4 relative bg-darker">
+      <div class="max-w-6xl mx-auto">
+        <div class="text-center mb-16">
+          <div
+            class="inline-flex items-center gap-2 text-primary font-semibold mb-4"
+          >
+            <i class="fa-solid fa-microchip w-5 h-5 text-sm"></i>
+            <span>Tech Stack</span>
+          </div>
+          <h2
+            class="font-display font-bold text-4xl md:text-5xl text-white mb-4"
+          >
+            Skills & <span class="text-gradient-animate">Technologies</span>
+          </h2>
+          <p class="text-gray-400 max-w-2xl mx-auto text-lg">
+            My technical toolkit for building modern, scalable, and performant
+            applications.
+          </p>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-8">
+          <!-- Frontend -->
+          <div class="glass rounded-2xl p-8 border border-white/10">
+            <h3
+              class="font-display font-bold text-xl text-white mb-6 flex items-center gap-3"
+            >
+              <div
+                class="w-10 h-10 rounded-lg bg-primary/20 flex items-center justify-center"
+              >
+                <i class="fa-solid fa-desktop w-5 h-5 text-primary"></i>
+              </div>
+              Frontend Core
+            </h3>
+            <div class="flex flex-wrap gap-3">
+              <span
+                class="skill-tag px-4 py-2 rounded-full bg-white/5 text-gray-300 text-sm font-medium border border-white/10 cursor-default"
+                >JavaScript</span
+              >
+              <span
+                class="skill-tag px-4 py-2 rounded-full bg-white/5 text-gray-300 text-sm font-medium border border-white/10 cursor-default"
+                >TypeScript</span
+              >
+              <span
+                class="skill-tag px-4 py-2 rounded-full bg-white/5 text-gray-300 text-sm font-medium border border-white/10 cursor-default"
+                >HTML5</span
+              >
+              <span
+                class="skill-tag px-4 py-2 rounded-full bg-white/5 text-gray-300 text-sm font-medium border border-white/10 cursor-default"
+                >CSS3</span
+              >
+              <span
+                class="skill-tag px-4 py-2 rounded-full bg-white/5 text-gray-300 text-sm font-medium border border-white/10 cursor-default"
+                >React</span
+              >
+              <span
+                class="skill-tag px-4 py-2 rounded-full bg-white/5 text-gray-300 text-sm font-medium border border-white/10 cursor-default"
+                >React Native</span
+              >
+            </div>
+          </div>
+
+          <!-- Styling -->
+          <div class="glass rounded-2xl p-8 border border-white/10">
+            <h3
+              class="font-display font-bold text-xl text-white mb-6 flex items-center gap-3"
+            >
+              <div
+                class="w-10 h-10 rounded-lg bg-secondary/20 flex items-center justify-center"
+              >
+                <i class="fa-solid fa-paintbrush w-5 h-5 text-secondary"></i>
+              </div>
+              Styling & UI
+            </h3>
+            <div class="flex flex-wrap gap-3">
+              <span
+                class="skill-tag px-4 py-2 rounded-full bg-white/5 text-gray-300 text-sm font-medium border border-white/10 cursor-default"
+                >Tailwind CSS</span
+              >
+              <span
+                class="skill-tag px-4 py-2 rounded-full bg-white/5 text-gray-300 text-sm font-medium border border-white/10 cursor-default"
+                >Bootstrap</span
+              >
+              <span
+                class="skill-tag px-4 py-2 rounded-full bg-white/5 text-gray-300 text-sm font-medium border border-white/10 cursor-default"
+                >Material-UI</span
+              >
+              <span
+                class="skill-tag px-4 py-2 rounded-full bg-white/5 text-gray-300 text-sm font-medium border border-white/10 cursor-default"
+                >Shadcn</span
+              >
+              <span
+                class="skill-tag px-4 py-2 rounded-full bg-white/5 text-gray-300 text-sm font-medium border border-white/10 cursor-default"
+                >Responsive Design</span
+              >
+              <span
+                class="skill-tag px-4 py-2 rounded-full bg-white/5 text-gray-300 text-sm font-medium border border-white/10 cursor-default"
+                >Figma</span
+              >
+            </div>
+          </div>
+
+          <!-- State & API -->
+          <div class="glass rounded-2xl p-8 border border-white/10">
+            <h3
+              class="font-display font-bold text-xl text-white mb-6 flex items-center gap-3"
+            >
+              <div
+                class="w-10 h-10 rounded-lg bg-accent/20 flex items-center justify-center"
+              >
+                <i class="fa-solid fa-server w-5 h-5 text-accent"></i>
+              </div>
+              State & API
+            </h3>
+            <div class="flex flex-wrap gap-3">
+              <span
+                class="skill-tag px-4 py-2 rounded-full bg-white/5 text-gray-300 text-sm font-medium border border-white/10 cursor-default"
+                >Redux</span
+              >
+              <span
+                class="skill-tag px-4 py-2 rounded-full bg-white/5 text-gray-300 text-sm font-medium border border-white/10 cursor-default"
+                >Context API</span
+              >
+              <span
+                class="skill-tag px-4 py-2 rounded-full bg-white/5 text-gray-300 text-sm font-medium border border-white/10 cursor-default"
+                >Axios</span
+              >
+              <span
+                class="skill-tag px-4 py-2 rounded-full bg-white/5 text-gray-300 text-sm font-medium border border-white/10 cursor-default"
+                >API Integration</span
+              >
+              <span
+                class="skill-tag px-4 py-2 rounded-full bg-white/5 text-gray-300 text-sm font-medium border border-white/10 cursor-default"
+                >Interceptors</span
+              >
+            </div>
+          </div>
+
+          <!-- CMS & E-commerce -->
+          <div class="glass rounded-2xl p-8 border border-white/10">
+            <h3
+              class="font-display font-bold text-xl text-white mb-6 flex items-center gap-3"
+            >
+              <div
+                class="w-10 h-10 rounded-lg bg-green-500/20 flex items-center justify-center"
+              >
+                <i class="fa-solid fa-cart-shopping w-5 h-5 text-green-500"></i>
+              </div>
+              CMS & E-commerce
+            </h3>
+            <div class="flex flex-wrap gap-3">
+              <span
+                class="skill-tag px-4 py-2 rounded-full bg-white/5 text-gray-300 text-sm font-medium border border-white/10 cursor-default"
+                >WordPress</span
+              >
+              <span
+                class="skill-tag px-4 py-2 rounded-full bg-white/5 text-gray-300 text-sm font-medium border border-white/10 cursor-default"
+                >WooCommerce</span
+              >
+              <span
+                class="skill-tag px-4 py-2 rounded-full bg-white/5 text-gray-300 text-sm font-medium border border-white/10 cursor-default"
+                >Shopify</span
+              >
+              <span
+                class="skill-tag px-4 py-2 rounded-full bg-white/5 text-gray-300 text-sm font-medium border border-white/10 cursor-default"
+                >Liquid</span
+              >
+              <span
+                class="skill-tag px-4 py-2 rounded-full bg-white/5 text-gray-300 text-sm font-medium border border-white/10 cursor-default"
+                >Theme Dev</span
+              >
+            </div>
+          </div>
+
+          <!-- Tools -->
+          <div class="glass rounded-2xl p-8 border border-white/10">
+            <h3
+              class="font-display font-bold text-xl text-white mb-6 flex items-center gap-3"
+            >
+              <div
+                class="w-10 h-10 rounded-lg bg-purple-500/20 flex items-center justify-center"
+              >
+                <i class="fa-solid fa-wrench w-5 h-5 text-purple-500"></i>
+              </div>
+              Tools & Workflow
+            </h3>
+            <div class="flex flex-wrap gap-3">
+              <span
+                class="skill-tag px-4 py-2 rounded-full bg-white/5 text-gray-300 text-sm font-medium border border-white/10 cursor-default"
+                >Git</span
+              >
+              <span
+                class="skill-tag px-4 py-2 rounded-full bg-white/5 text-gray-300 text-sm font-medium border border-white/10 cursor-default"
+                >GitHub</span
+              >
+              <span
+                class="skill-tag px-4 py-2 rounded-full bg-white/5 text-gray-300 text-sm font-medium border border-white/10 cursor-default"
+                >VS Code</span
+              >
+              <span
+                class="skill-tag px-4 py-2 rounded-full bg-white/5 text-gray-300 text-sm font-medium border border-white/10 cursor-default"
+                >NPM</span
+              >
+              <span
+                class="skill-tag px-4 py-2 rounded-full bg-white/5 text-gray-300 text-sm font-medium border border-white/10 cursor-default"
+                >Chrome DevTools</span
+              >
+            </div>
+          </div>
+
+          <!-- SEO & Animation -->
+          <div class="glass rounded-2xl p-8 border border-white/10">
+            <h3
+              class="font-display font-bold text-xl text-white mb-6 flex items-center gap-3"
+            >
+              <div
+                class="w-10 h-10 rounded-lg bg-orange-500/20 flex items-center justify-center"
+              >
+                <i class="fa-solid fa-sparkles w-5 h-5 text-orange-500"></i>
+              </div>
+              SEO & Animation
+            </h3>
+            <div class="flex flex-wrap gap-3">
+              <span
+                class="skill-tag px-4 py-2 rounded-full bg-white/5 text-gray-300 text-sm font-medium border border-white/10 cursor-default"
+                >Technical SEO</span
+              >
+              <span
+                class="skill-tag px-4 py-2 rounded-full bg-white/5 text-gray-300 text-sm font-medium border border-white/10 cursor-default"
+                >GSAP</span
+              >
+              <span
+                class="skill-tag px-4 py-2 rounded-full bg-white/5 text-gray-300 text-sm font-medium border border-white/10 cursor-default"
+                >ScrollTrigger</span
+              >
+              <span
+                class="skill-tag px-4 py-2 rounded-full bg-white/5 text-gray-300 text-sm font-medium border border-white/10 cursor-default"
+                >Performance</span
+              >
+              <span
+                class="skill-tag px-4 py-2 rounded-full bg-white/5 text-gray-300 text-sm font-medium border border-white/10 cursor-default"
+                >Accessibility</span
+              >
+            </div>
+          </div>
+        </div>
+
+        <!-- Experience Timeline -->
+        <div class="mt-20">
+          <h3
+            class="font-display font-bold text-2xl text-white mb-10 text-center"
+          >
+            Work Experience
+          </h3>
+          <div class="space-y-8">
+            <div
+              class="glass rounded-2xl p-6 border border-white/10 flex flex-col md:flex-row md:items-center gap-6"
+            >
+              <div
+                class="w-16 h-16 rounded-xl bg-primary/20 flex items-center justify-center flex-shrink-0"
+              >
+                <i class="fa-solid fa-mobile w-8 h-8 text-primary"></i>
+              </div>
+              <div class="flex-1">
+                <div
+                  class="flex flex-col md:flex-row md:items-center md:justify-between mb-2"
+                >
+                  <h4 class="font-display font-bold text-lg text-white">
+                    Mobile Frontend Developer (React Native)
+                  </h4>
+                  <span class="text-primary font-semibold text-sm"
+                    >Nov 2025 - Present</span
+                  >
+                </div>
+                <p class="text-gray-400 text-sm mb-2">Tapi</p>
+                <p class="text-gray-500 text-sm">
+                  Building and maintaining mobile applications using React
+                  Native. Developing reusable components, integrating APIs, and
+                  collaborating with designers and backend teams to deliver
+                  smooth user experiences.
+                </p>
+              </div>
+            </div>
+
+            <div
+              class="glass rounded-2xl p-6 border border-white/10 flex flex-col md:flex-row md:items-center gap-6"
+            >
+              <div
+                class="w-16 h-16 rounded-xl bg-secondary/20 flex items-center justify-center flex-shrink-0"
+              >
+                <i class="fa-solid fa-code w-8 h-8 text-secondary"></i>
+              </div>
+              <div class="flex-1">
+                <div
+                  class="flex flex-col md:flex-row md:items-center md:justify-between mb-2"
+                >
+                  <h4 class="font-display font-bold text-lg text-white">
+                    Frontend Web Developer (Intern)
+                  </h4>
+                  <span class="text-secondary font-semibold text-sm"
+                    >Sep 2025 - Nov 2025</span
+                  >
+                </div>
+                <p class="text-gray-400 text-sm mb-2">DRB</p>
+                <p class="text-gray-500 text-sm">
+                  Built and improved web interfaces using React. Worked with
+                  APIs, components, and responsive UI design. Collaborated with
+                  mentors and contributed to real projects.
+                </p>
+              </div>
+            </div>
+
+            <div
+              class="glass rounded-2xl p-6 border border-white/10 flex flex-col md:flex-row md:items-center gap-6"
+            >
+              <div
+                class="w-16 h-16 rounded-xl bg-accent/20 flex items-center justify-center flex-shrink-0"
+              >
+                <i class="fa-solid fa-graduation-cap w-8 h-8 text-accent"></i>
+              </div>
+              <div class="flex-1">
+                <div
+                  class="flex flex-col md:flex-row md:items-center md:justify-between mb-2"
+                >
+                  <h4 class="font-display font-bold text-lg text-white">
+                    Freelance Online Instructor (C++)
+                  </h4>
+                  <span class="text-accent font-semibold text-sm"
+                    >2024 - Present</span
+                  >
+                </div>
+                <p class="text-gray-400 text-sm mb-2">Remote</p>
+                <p class="text-gray-500 text-sm">
+                  Teaching C++ programming fundamentals to students through
+                  online sessions. Explaining core concepts such as variables,
+                  loops, functions, and problem-solving. Helping students
+                  practice algorithmic thinking.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-24 px-4 relative">
+      <div class="max-w-4xl mx-auto">
+        <div
+          class="glass rounded-3xl p-8 md:p-16 border border-white/10 relative overflow-hidden"
+        >
+          <!-- Background Decoration -->
+          <div
+            class="absolute top-0 right-0 w-64 h-64 bg-primary/20 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2"
+          ></div>
+          <div
+            class="absolute bottom-0 left-0 w-64 h-64 bg-secondary/20 rounded-full blur-3xl translate-y-1/2 -translate-x-1/2"
+          ></div>
+
+          <div class="relative z-10 text-center">
+            <div
+              class="inline-flex items-center gap-2 text-primary font-semibold mb-4"
+            >
+              <i class="fa-solid fa-envelope w-5 h-5 text-sm"></i>
+              <span>Get In Touch</span>
+            </div>
+            <h2
+              class="font-display font-bold text-4xl md:text-5xl text-white mb-6"
+            >
+              Let's Work <span class="text-gradient-animate">Together</span>
+            </h2>
+            <p class="text-gray-400 text-lg mb-10 max-w-xl mx-auto">
+              Have a project in mind? I'm currently available for freelance work
+              and open to new opportunities.
+            </p>
+
+            <div class="grid md:grid-cols-4 gap-6 mb-12">
+              <a
+                href="mailto:nadaessam602@gmail.com"
+                class="group p-6 rounded-2xl bg-white/5 border border-white/10 hover:border-primary/50 transition-all duration-300"
+              >
+                <div
+                  class="w-12 h-12 rounded-full bg-primary/20 flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform"
+                >
+                  <i class="fa-solid fa-envelope w-6 h-6 text-primary"></i>
+                </div>
+                <h3 class="font-semibold text-white mb-1">Email</h3>
+                <p class="text-gray-400" style="font-size: 11px">
+                  nadaessam602@gmail.com
+                </p>
+              </a>
+
+              <a
+                href="tel:01143495516"
+                class="group p-6 rounded-2xl bg-white/5 border border-white/10 hover:border-secondary/50 transition-all duration-300"
+              >
+                <div
+                  class="w-12 h-12 rounded-full bg-secondary/20 flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform"
+                >
+                  <i class="fa-solid fa-phone w-6 h-6 text-secondary"></i>
+                </div>
+                <h3 class="font-semibold text-white mb-1">Phone</h3>
+                <p class="text-sm text-gray-400">01143495516</p>
+              </a>
+
+              <a
+                href="https://wa.me/201143495516"
+                target="_blank"
+                class="group p-6 rounded-2xl bg-white/5 border border-white/10 hover:border-green-500/50 transition-all duration-300"
+              >
+                <div
+                  class="w-12 h-12 rounded-full bg-green-500/20 flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform"
+                >
+                  <i class="fa-brands fa-whatsapp w-6 h-6 text-green-500"></i>
+                </div>
+                <h3 class="font-semibold text-white mb-1">WhatsApp</h3>
+                <p class="text-sm text-gray-400">+20 114 349 5516</p>
+              </a>
+
+              <a
+                href="https://linkedin.com/in/nada-essam602"
+                target="_blank"
+                class="group p-6 rounded-2xl bg-white/5 border border-white/10 hover:border-accent/50 transition-all duration-300"
+              >
+                <div
+                  class="w-12 h-12 rounded-full bg-accent/20 flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform"
+                >
+                  <i class="fa-brands fa-linkedin w-6 h-6 text-accent"></i>
+                </div>
+                <h3 class="font-semibold text-white mb-1">LinkedIn</h3>
+                <p class="text-sm text-gray-400">Nada Essam</p>
+              </a>
+            </div>
+
+            <a
+              href="https://wa.me/201143495516"
+              class="magnetic-btn inline-flex items-center gap-3 px-8 py-4 bg-white text-black font-semibold rounded-full hover:bg-primary hover:text-white transition-all duration-300 text-lg"
+            >
+              Start a Project
+              <i class="fa-solid fa-arrow-right w-5 h-5"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-8 px-4 border-t border-white/10 bg-darker">
+      <div
+        class="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4"
+      >
+        <div class="flex items-center gap-2">
+          <span class="font-display font-bold text-2xl text-white"
+            >NE<span class="text-primary">.</span></span
+          >
+          <span class="text-gray-500 text-sm"
+            >© 2026 Nada Essam. All rights reserved.</span
+          >
+        </div>
+
+        <div class="flex items-center gap-6">
+          <a
+            href="https://github.com/Nada602"
+            target="_blank"
+            class="text-gray-400 hover:text-white transition-colors"
+          >
+            <i class="fa-brands fa-github w-5 h-5"></i>
+          </a>
+          <a
+            href="https://linkedin.com/in/nada-essam602"
+            target="_blank"
+            class="text-gray-400 hover:text-white transition-colors"
+          >
+            <i class="fa-brands fa-linkedin w-5 h-5"></i>
+          </a>
+          <a
+            href="mailto:nadaessam602@gmail.com"
+            class="text-gray-400 hover:text-white transition-colors"
+          >
+            <i class="fa-solid fa-envelope w-5 h-5"></i>
+          </a>
+          <a
+            href="tel:01143495516"
+            class="text-gray-400 hover:text-white transition-colors"
+          >
+            <i class="fa-solid fa-phone w-5 h-5"></i>
+          </a>
+          <a
+            href="https://wa.me/201143495516"
+            target="_blank"
+            class="text-gray-400 hover:text-white transition-colors"
+          >
+            <i class="fa-brands fa-whatsapp w-5 h-5"></i>
+          </a>
+        </div>
+      </div>
+    </footer>
+
+    <script src="main.js"></script>
+  </body>
+</html>
